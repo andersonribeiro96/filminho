@@ -10,11 +10,13 @@ import { NoiteComponent } from './entities/noite/noite.component';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {FormsModule} from "@angular/forms";
 import {FilmeService} from "./services/filme.service";
+import { FilmeComponent } from './entities/filme/filme.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoiteComponent
+    NoiteComponent,
+    FilmeComponent
   ],
     imports: [
         BrowserModule,

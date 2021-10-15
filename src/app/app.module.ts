@@ -8,6 +8,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoiteComponent } from './entities/noite/noite.component';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {FormsModule} from "@angular/forms";
+import {FilmeService} from "./services/filme.service";
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,
-        MatButtonToggleModule
+        MatButtonToggleModule,
+        FormsModule
     ],
-  providers: [NoiteService],
+  providers: [NoiteService, FilmeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,17 +13,41 @@
                 Gerar Filme
             </button>
         </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" >
+            <div class="accordion-body" *ngIf="filme.link == null">
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" [(ngModel)]="teste">
+                    <option value="28">Action</option>
+                    <option value="12">Adventure</option>
+                    <option value="35">Comedy</option>
                 </select>
-                <button type="button" class="btn btn-primary">Primary</button>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="number" min="1960" max="2021" value="2016" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="ano">
+                </div>
+                <button type="button" (click)="gerarFilme()" class="btn btn-primary mt-3">Primary</button>
             </div>
+
+            <div class="accordion-body" *ngIf="filme.link != null">
+                <div>
+                    <p><b>{{filme.nome}}</b></p>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-warning"><a href="{{filme.link}}" target="_blank">Onde Assistir ?</a></button>
+                </div>
+                <div>
+                    <button type="button" (click)="gerarNovoFilme()" class="btn btn-primary mt-3">Gerar novo Filme</button>
+                </div>
+            </div>
+
         </div>
+
+
+
+
+
+
+
+
     </div>
     <div class="accordion-item">
         <h2 class="accordion-header" id="headingThree">

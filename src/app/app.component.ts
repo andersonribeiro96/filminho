@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NoiteService} from "./services/noite.service";
+import {FilmeService} from "./services/filme.service";
+import {Filme} from "./model/filme";
 
 @Component({
   selector: 'app-root',
@@ -10,15 +12,29 @@ import {NoiteService} from "./services/noite.service";
 
 export class AppComponent implements OnInit{
 
-  constructor(private noiteServices:NoiteService) {
+  teste : any;
+  ano: any;
+  filme:Filme
+
+  constructor(private noiteServices:NoiteService, private filmeServices: FilmeService) {
+    this.filme = new Filme();
   }
 
   ngOnInit(): void {
   }
 
-  // gerarNoite(){
-  //   this.noiteServices.gerarNoite("28","2019").subscribe(value => console.log(value))
-  // }
+
+  gerarFilme(){
+    this.filmeServices.gerarFilme(this.teste.toString(), this.ano.toString()).subscribe(value => {
+      this.filme = value;
+      console.log(this.filme.nome);
+    });
+  }
+
+  gerarNovoFilme(){
+    this.filme = new Filme();
+  }
+
 
 
 }

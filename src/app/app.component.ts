@@ -3,7 +3,7 @@ import {NoiteService} from "./services/noite.service";
 
 @Component({
   selector: 'app-root',
-  templateUrl:'teste.html',
+  templateUrl:'inicial.html',
   styles: []
 })
 
@@ -14,12 +14,11 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.gerarNoite();
   }
 
-  gerarNoite(){
-    this.noiteServices.gerarNoite("28","2019").subscribe(value => console.log(value))
-  }
+  // gerarNoite(){
+  //   this.noiteServices.gerarNoite("28","2019").subscribe(value => console.log(value))
+  // }
 
 
 }

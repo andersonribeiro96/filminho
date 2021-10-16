@@ -26,10 +26,9 @@
                 </div>
             </div>
 
-            <div class="mt-lg-4">
-                <label class="form-label fw-bold">Selecione uma nota: <span>{{nota}}</span></label>
+            <div>
+                <label class="form-label fw-bold mt-4">Selecione uma nota: <span>{{nota}}</span></label>
                 <input type="range" class="form-range" min="1" max="10" id="customRange2" [(ngModel)]="nota">
-
             </div>
 
             <div>
@@ -39,24 +38,33 @@
                     Selecione a quantidade de votos entre 1 a 9999.
                 </div>
             </div>
-
             <button type="button" (click)="gerarFilme()" class="btn btn-primary mt-3">Descubrir filme</button>
         </div>
 
 
 
-
-
-        <div class="accordion-body" *ngIf="filme.link != null">
-            <div>
-                <p><b>{{filme.nome}}</b></p>
+        <div class="accordion-body" *ngIf="temFilmeSelecionado()">
+            <div class="row">
+                <div class="col-4 text-center">
+                    <img [src]="filme.urlImage" class="img-fluid" alt="Imagem responsiva" width="300px">
+                </div>
+                <div class="col-8">
+                    <div class="row-cols-1 fw-bold text-center">
+                        {{filme.nome}}
+                    </div>
+                    <div class="mt-3" style="text-align: justify">
+                        <p>{{filme.description}}</p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <button type="button" class="btn btn-warning"><a href="{{filme.link}}" target="_blank">Onde Assistir
-                    ?</a></button>
-            </div>
-            <div>
-                <button type="button" (click)="gerarNovoFilme()" class="btn btn-primary mt-3">Gerar novo Filme</button>
+
+            <div class="d-flex flex-row-reverse bd-highlight">
+                <div class="p-2 bd-highlight">
+                    <button type="button" class="btn btn-warning mt-3"><a href="{{filme.link}}" target="_blank">Onde Assistir ?</a></button>
+                </div>
+                <div class="p-2 bd-highlight">
+                    <button type="button" (click)="gerarNovoFilme()" class="btn btn-primary mt-3">Gerar novo Filme</button>
+                </div>
             </div>
         </div>
     </div>

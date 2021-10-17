@@ -1,14 +1,13 @@
+import {MovieDetails} from "./movie-details";
+
 export class Filme {
 
-    constructor(nome?: string, link?: string, urlImage?: string, description?: string) {
-        this.nome = nome;
+    constructor(link?: string, movieDetails?: MovieDetails) {
         this.link = link;
-        this.urlImage = urlImage;
-        this.description = description;
+        this.movieDetails = movieDetails;
     }
 
-    nome: string | undefined;
     link: string | undefined;
-    urlImage: string | undefined;
-    description: string | undefined
+    movieDetails: MovieDetails | undefined;
+
 }

@@ -11,12 +11,16 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {FormsModule} from "@angular/forms";
 import {FilmeService} from "./services/filme.service";
 import { FilmeComponent } from './entities/filme/filme.component';
+import {MatIconModule} from "@angular/material/icon";
+import {ImdbRatingService} from "./services/imdb-rating.service";
+import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NoiteComponent,
-    FilmeComponent
+    FilmeComponent,
+    DarkModeToggleComponent
   ],
     imports: [
         BrowserModule,
@@ -24,9 +28,10 @@ import { FilmeComponent } from './entities/filme/filme.component';
         HttpClientModule,
         BrowserAnimationsModule,
         MatButtonToggleModule,
-        FormsModule
+        FormsModule,
+        MatIconModule
     ],
-  providers: [NoiteService, FilmeService],
+  providers: [NoiteService, FilmeService, ImdbRatingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

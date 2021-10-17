@@ -9,8 +9,9 @@ export class FilmeService {
 
   constructor(private http:HttpClient) { }
 
-  gerarFilme(genero:string, ano:string, nota:string, votos:string) : Observable<any> {
-    let URL = `https://films-random.herokuapp.com/filmes/discovery/year/${genero}/${ano}/${nota}/${votos}`;
+  gerarFilme(genero:string, nota:string) : Observable<any> {
+    let URL = `https://films-random.herokuapp.com/filmes/discovery/year/${genero}/${nota}`;
     return this.http.get<any>(URL);
   }
+
 }
